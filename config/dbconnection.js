@@ -9,11 +9,14 @@ const connection = new sequelize("dbatividade", "root", "", {
   }
 });
 
-try {
-  connection.authenticate();
-  console.log("Conexão com o banco de dados estabelecida com sucesso.")
-} catch (error) {
-  console.error(`Não foi possível conectar ao banco de dados: ${error}`);
-}
+
+(async () => {
+  try {
+    await connection.authenticate();
+    console.log("Conexão com o banco de dados estabelecida com sucesso.")
+  } catch (error) {
+    console.error(`Não foi possível conectar ao banco de dados: ${error}`);
+  }
+})();
 
 module.exports = connection;
