@@ -38,3 +38,5 @@ const customer = db.define("cliente", {
     console.error(`Não foi possível conectar ao banco de dados: ${error}`);
   }
 })();
+
+module.exports = customer;
