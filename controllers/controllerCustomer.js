@@ -16,12 +16,12 @@ controller.getById = async (req, res) => {
     const customer = await Customer.findByPk(id);
     res.status(200).json(customer);
   } catch (error) {
-    res.status(422).json(`Erro ao buscar o item. ${error}`);
+    res.status(422).json(`Erro ao buscar item. ${error}`);
   }
 }
 
 controller.getByCityName = async (req, res) => {
-  const cityName = req.params.city;
+  const cityName = req.params.cityName;
   try {
     const customer = await Customer.findAll({
       where: {
