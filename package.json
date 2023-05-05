@@ -1,0 +1,23 @@
+{
+  "name": "devii-atividade-ead-2",
+  "version": "1.0.0",
+  "description": "Atividade EAD 2 - Servidor Web e Banco de Dados",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernando-ao/devii-atividade-ead-2.git"
+  },
+  "author": "Fernando Augusto Ortolan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernando-ao/devii-atividade-ead-2/issues"
+  },
+  "homepage": "https://github.com/fernando-ao/devii-atividade-ead-2",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
