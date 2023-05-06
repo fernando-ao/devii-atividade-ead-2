@@ -11,12 +11,12 @@ controller.getAll = async (req, res) => {
 }
 
 controller.getById = async (req, res) => {
-  const id = req.params.id;
+  const customerId = req.params.id;
   try {
-    const customer = await Customer.findByPk(id);
+    const customer = await Customer.findByPk(customerId);
     res.status(200).json(customer);
   } catch (error) {
-    res.status(422).json(`Erro ao buscar item. ${error}`);
+    res.status(422).json(`Erro ao buscar cliente. ${error}`);
   }
 }
 
@@ -30,7 +30,7 @@ controller.getByCityName = async (req, res) => {
     });
     res.status(200).json(customer);
   } catch (error) {
-    res.status(422).json(`Erro ao buscar item. ${error}`);
+    res.status(422).json(`Erro ao buscar cliente. ${error}`);
   }
 }
 
@@ -46,13 +46,13 @@ controller.create = async (req, res) => {
     });
     res.status(200).redirect("/");
   } catch (error) {
-    res.status(422).json(`Erro ao cadastrar item. ${error}`);
+    res.status(422).json(`Erro ao cadastrar cliente. ${error}`);
   }
 }
 
 controller.update = async (req, res) => {
   const reqCustomer = req.body;
-  const id = req.params.id;
+  const customerId = req.params.id;
   try {
     const customer = await Customer.update({
       nome: reqCustomer.nome,
@@ -62,26 +62,26 @@ controller.update = async (req, res) => {
       cep: reqCustomer.cep
     }, {
       where: {
-        id: id
+        id: customerId
       }
     });
     res.status(200).redirect("/");
   } catch (error) {
-    res.status(422).json(`Erro ao atualizar item. ${error}`);
+    res.status(422).json(`Erro ao atualizar cliente. ${error}`);
   }
 }
 
 controller.delete = async (req, res) => {
-  const id = req.params.id;
+  const customerId = req.params.id;
   try {
     const customer = await Customer.destroy({
       where: {
-        id: id
+        id: customerId
       }
     });
     res.status(200).redirect("/");
   } catch (error) {
-    res.status(422).json(`Erro ao deletar item. ${error}`);
+    res.status(422).json(`Erro ao excluir cliente. ${error}`);
   }
 }
 
